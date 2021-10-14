@@ -119,7 +119,7 @@ const update = item => {
 const fetchTree = item => {
     item._treeState = 'open';
     return item.fetchContent().then(() => {
-        if (item.parent) {
+        if (item.parent && !(item.label.match(/^0x[a-fA-F0-9]{40}$/))) {
             return fetchTree(item.parent);
         }
         return item;
