@@ -32,6 +32,9 @@ const viewTpl =
                 </li>
             </ul>
             <div id="view-hint"></div>
+            <div style="margin-top: 2rem; text-decoration: underline;">
+                <a id="open_in_remix" href="#" target="_blank" rel="noopener noreferrer">Open repo in Remix</a>
+            </div>
         </div>`;
 const itemTpl =
         `<li class="item">
@@ -46,6 +49,11 @@ const itemTpl =
 const $view = dom(viewTpl);
 const $items = $view.find('#items');
 const $hint = $view.find('#view-hint');
+const $remix_link = $view.find('#open_in_remix');
+const $path = global.window.location.href.split('/');
+const $address = $path[6];
+const $chainId = $path[5];
+$remix_link.attr('href', `https://remix.ethereum.org/?#activate=source-verification&call=source-verification//fetchAndSave//${$address}//${$chainId}`);
 
 
 const cropSize = (size, min, max) => Math.min(max, Math.max(min, size));
