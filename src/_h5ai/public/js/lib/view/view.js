@@ -53,7 +53,7 @@ const $remix_link = $view.find('#open_in_remix');
 const $path = global.window.location.href.split('/');
 const $address = $path[6];
 const $chainId = $path[5];
-$remix_link.attr('href', `https://remix.ethereum.org/?#activate=source-verification&call=source-verification//fetchAndSave//${$address}//${$chainId}`);
+$remix_link.attr('href', `https://remix.ethereum.org/?#activate=sourcify&call=sourcify//fetchAndSave//${$address}//${$chainId}`);
 
 
 const cropSize = (size, min, max) => Math.min(max, Math.max(min, size));
