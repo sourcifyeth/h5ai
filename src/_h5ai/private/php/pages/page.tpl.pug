@@ -10,8 +10,12 @@ html(class='no-js', lang='en')
         title #{title}
         meta(name='description', content=title)
         meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='twitter:card', content='summary_large_image')
+        meta(name='twitter:site', content='@sourcifyeth')
+        meta(name='og:title', content='Sourciy Contract Repository')
+        meta(name='og:image', content!='<?= $public_href; ?>images/sourcify-eth-card.png')
         link(rel='shortcut icon', href!='<?= $public_href; ?>images/favicon/favicon-32.ico')
-        link(rel='apple-touch-icon-precomposed', type='image/png', href!='<?= $public_href; ?>images/favicon/favicon-152.png')
+        link(rel='apple-touch-icon-precomposed', type='image/png', href!='<?= $public_href; ?>images/favicon/apple-touch-icon.png')
         link(rel='stylesheet', href!='<?= $public_href; ?>css/styles.css')
         <?php if (!$fallback_mode) { ?>
         script(src!='<?= $public_href; ?>js/scripts.js', data-module=module)
