@@ -267,11 +267,7 @@ const init = () => {
             if (ev.target.id === 'pv-overlay' || ev.target.id === 'pv-container') {
                 exit();
             }
-        })
-        .on('mousedown', dropEvent)
-        .on('mousemove', dropEvent)
-        .on('keydown', dropEvent)
-        .on('keypress', dropEvent);
+        });
 
     dom('#pv-spinner').hide();
     dom('#pv-bar-prev, #pv-prev-area').on('click', prev);
